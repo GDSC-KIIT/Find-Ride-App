@@ -1,2 +1,2 @@
 # Find-Ride-App
-This app enables you to get a nearby ride.
+This app till now will only allow you to get your own location and print the coordinates in the textbox.
