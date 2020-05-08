@@ -1,4 +1,5 @@
 # Find-Ride-App/Webapp
+Introducing a new platoform to book a cab, auto, rickshaw, toto or any other passenger carrying vehicle.
 # Working: 
 1.	It is a web app and an app. It will contain 2 buttons named Check and Drivers. 
 2.	If clicked on Check, the page will show the list of auto, rickshaw, Toto and taxi drivers within the radius of 3 km.
