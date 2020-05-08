@@ -11,7 +11,7 @@
 9.	The drivers not having any android mobile will give their home location as their permanent location.
 
 # Facilities: 
-USER’s Perspective
+## USER’s Perspective
 1.	There are places where we don’t have the facility of online cab booking. For example, we have the facilities of OLA and UBER in BBSR but in Puri the option is unavailable. Not only in one place but in maximum villages the facility of online booking of cab, auto or rickshaw is not available. The app mainly targets those places.
 2.	In OLA and Uber, the price is fixed and there cannot be any negotiation for the travellers and the auto drivers. This web app/app lets it happen.
 3.	The web app/app is easy to use than any other app as it doesn’t use any kind of app to be installed in the mobile. The only thing required is an internet connection (works in lower bandwidth as well).
@@ -23,7 +23,7 @@ USER’s Perspective
 
 Overall both the customers and the drivers can feel like they are using the services offline.
 
-## Business Plan: 
+# Business Plan: 
 1.	The registration of the drivers will be done online with proper details (no KYC).
 2.	All the auto stands in the villages will be notified by us offline. From every auto stand or union 1-2 persons will be called in a workshop conducted by us. From this workshop, they will come to know the exact proceedings and guide. From them, all the auto drivers from the union will come to know about the product. 
 3.	We will have a customer care service open for all the queries.
