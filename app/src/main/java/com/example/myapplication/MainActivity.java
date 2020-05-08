@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(ActivityCompat.checkSelfPermission(MainActivity.this,android.Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
         {
             TextView textView=findViewById(R.id.textView);
-            textView.setText(" You have Desabled the Location ");
+            textView.setText("You have Desabled the Location ");
             return;
         }
         client.getLastLocation().addOnSuccessListener(MainActivity.this, new OnSuccessListener<Location>() {
