@@ -45,6 +45,7 @@
                 android:layout_below="@+id/edttext"
                 android:layout_centerHorizontal="true"
                 android:text="@string/continuetext"
+                android:textColor="@color/white"
                 android:background="@drawable/buttonbg2"
                 android:layout_marginBottom="20dp"
                 />
