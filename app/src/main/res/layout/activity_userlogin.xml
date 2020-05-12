@@ -3,32 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.cardview.widget.CardView
-        android:layout_centerInParent="true"
+        android:id="@+id/card"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="30dp"
+        app:cardElevation="20dp"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:fontFamily="monospace"
-            android:text="@string/enter_mobile_number"
-            />
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/enter_mobile_number"
+                android:textSize="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+                android:textStyle="bold" />
         <EditText
             android:id="@+id/edttext"
-            android:layout_marginTop="20dp"
             android:layout_below="@+id/txt"
+            android:layout_margin="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittextbg"
             android:drawableLeft="@drawable/ic_phone_black_24dp"
             />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edttext"
+                android:layout_centerHorizontal="true"
+                android:text="@string/continuetext"
+                android:background="@drawable/buttonbg2"
+                android:layout_marginBottom="20dp"
+                />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
