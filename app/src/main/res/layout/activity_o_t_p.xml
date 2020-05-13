@@ -84,16 +84,20 @@
                     android:id="@+id/otpET1"
                     android:layout_width="40dp"
                     android:layout_height="70dp"
+                    android:clickable="false"
+
+                    android:gravity="center"
                     android:inputType="number"
                     android:maxLength="1"
-                    android:gravity="center"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/otpET2"
                     android:layout_width="40dp"
                     android:layout_height="70dp"
                     android:inputType="number"
+                    android:clickable="false"
+
                     android:maxLength="1"
                     android:gravity="center"
                     android:textSize="20sp"/>
@@ -103,6 +107,8 @@
                     android:layout_width="40dp"
                     android:layout_height="70dp"
                     android:gravity="center"
+                    android:clickable="false"
+
                     android:inputType="number"
                     android:maxLength="1"
                     android:textSize="20sp" />
@@ -112,6 +118,7 @@
                     android:layout_width="40dp"
                     android:layout_height="70dp"
                     android:inputType="number"
+                    android:clickable="false"
                     android:maxLength="1"
                     android:gravity="center"
                     android:textSize="20sp"/>

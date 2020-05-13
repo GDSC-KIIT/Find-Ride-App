@@ -26,7 +26,11 @@ public class OTPActivity extends AppCompatActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 EditText ed1=findViewById(R.id.otpET1);
                 // TODO Auto-generated method stub
-                if (ed1.getText().length() == 1)
+                if(keyCode == KeyEvent.KEYCODE_DEL)
+                {
+                    ed1.requestFocus();
+                }
+                else if (ed1.getText().length() == 1)
                 {
                     EditText ed2 = findViewById(R.id.otpET2);
                     ed2.requestFocus();
@@ -40,8 +44,14 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 EditText ed2=findViewById(R.id.otpET2);
+                EditText ed1 = findViewById(R.id.otpET1);
                 // TODO Auto-generated method stub
-                if (ed2.getText().length() == 1) {
+                if(keyCode == KeyEvent.KEYCODE_DEL)
+                {
+                    ed1.requestFocus();
+                }
+                else if (ed2.getText().length() == 1)
+                {
                     EditText ed3 = findViewById(R.id.otpET3);
                     ed3.requestFocus();
                 }
@@ -54,8 +64,14 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 EditText ed3=findViewById(R.id.otpET3);
+                EditText ed2=findViewById(R.id.otpET2);
                 // TODO Auto-generated method stub
-                if (ed3.getText().length() == 1) {
+                if(keyCode == KeyEvent.KEYCODE_DEL)
+                {
+                    ed2.requestFocus();
+                }
+                else if (ed3.getText().length() == 1)
+                {
                     EditText ed4 = findViewById(R.id.otpET4);
                     ed4.requestFocus();
                 }
@@ -68,8 +84,14 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 EditText ed4=findViewById(R.id.otpET4);
+                EditText ed3=findViewById(R.id.otpET3);
                 // TODO Auto-generated method stub
-                if (ed4.getText().length() == 1) {
+                if(keyCode == KeyEvent.KEYCODE_DEL)
+                {
+                    ed3.requestFocus();
+                }
+                else if (ed4.getText().length() == 1)
+                {
                     Button button = findViewById(R.id.otp_submit);
                     button.requestFocus();
                 }
