@@ -26,7 +26,8 @@ public class OTPActivity extends AppCompatActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 EditText ed1=findViewById(R.id.otpET1);
                 // TODO Auto-generated method stub
-                if (ed1.getText().length() == 1) {
+                if (ed1.getText().length() == 1)
+                {
                     EditText ed2 = findViewById(R.id.otpET2);
                     ed2.requestFocus();
                 }
