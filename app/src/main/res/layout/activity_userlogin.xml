@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/txt"
+                android:id="@+id/txtname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -26,14 +26,39 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/nunito_sans"
+                android:text="@string/enter_name"
+                android:textSize="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/edttextname"
+                android:layout_below="@+id/txtname"
+                android:layout_margin="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg"
+                android:textSize="17sp"
+                android:inputType="textPersonName"
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                />
+            <TextView
+                android:id="@+id/txtnumber"
+                android:layout_below="@+id/edttextname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/nunito_sans"
                 android:text="@string/enter_mobile_number"
                 android:textSize="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
                 android:textStyle="bold" />
         <EditText
-            android:id="@+id/edttext"
-            android:layout_below="@+id/txt"
+            android:id="@+id/edttextnumber"
+            android:layout_below="@+id/txtnumber"
             android:layout_margin="30dp"
             android:layout_width="match_parent"
+            android:textSize="17sp"
+            android:inputType="number"
             android:layout_height="wrap_content"
             android:background="@drawable/edittextbg"
             android:drawableLeft="@drawable/ic_phone_black_24dp"
@@ -42,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginHorizontal="10dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/edttext"
+                android:layout_below="@+id/edttextnumber"
                 android:layout_centerHorizontal="true"
                 android:text="@string/continuetext"
                 android:textColor="@color/white"

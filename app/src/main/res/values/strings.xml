@@ -2,7 +2,8 @@
     <string name="app_name">Find Ride</string>
     <string name="driver_login">DRIVER LOGIN</string>
     <string name="user_login">USER LOGIN</string>
-    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="enter_name">Enter Name</string>
     <string name="otp_label">OTP Verification</string>
     <string name="otp_label2">Enter the 4-digit code sent to you at</string>
     <string name="Edit">Edit</string>
