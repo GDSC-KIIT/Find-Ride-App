@@ -63,11 +63,21 @@
             android:background="@drawable/edittextbg"
             android:drawableStart="@drawable/ic_phone_black_24dp"
             />
+            <TextView
+                android:id="@+id/tandc"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/tandc"
+                android:layout_below="@id/edttextnumber"
+                android:layout_marginBottom="20dp"
+                />
             <Button
                 android:layout_width="match_parent"
                 android:layout_marginHorizontal="10dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/edttextnumber"
+                android:layout_below="@+id/tandc"
                 android:layout_centerHorizontal="true"
                 android:text="@string/continuetext"
                 android:textColor="@color/white"
