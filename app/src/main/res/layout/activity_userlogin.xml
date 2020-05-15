@@ -38,7 +38,7 @@
                 android:background="@drawable/edittextbg"
                 android:textSize="17sp"
                 android:inputType="textPersonName"
-                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
                 />
             <TextView
                 android:id="@+id/txtnumber"
@@ -61,7 +61,7 @@
             android:inputType="number"
             android:layout_height="wrap_content"
             android:background="@drawable/edittextbg"
-            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:drawableStart="@drawable/ic_phone_black_24dp"
             />
             <Button
                 android:layout_width="match_parent"
