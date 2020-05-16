@@ -11,8 +11,7 @@ import android.widget.EditText;
 public class OTPActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_o_t_p);
         EditText ed1=findViewById(R.id.otpET1);

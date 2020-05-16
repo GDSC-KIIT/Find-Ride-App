@@ -29,6 +29,7 @@
                 android:text="@string/enter_name"
                 android:textSize="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
                 android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/edttextname"
                 android:layout_below="@+id/txtname"
@@ -38,8 +39,8 @@
                 android:background="@drawable/edittextbg"
                 android:textSize="17sp"
                 android:inputType="textPersonName"
-                android:drawableStart="@drawable/ic_person_black_24dp"
-                />
+                android:padding="10dp"
+                android:drawableStart="@drawable/ic_person_black_24dp" />
             <TextView
                 android:id="@+id/txtnumber"
                 android:layout_below="@+id/edttextname"
@@ -56,6 +57,7 @@
             android:id="@+id/edttextnumber"
             android:layout_below="@+id/txtnumber"
             android:layout_margin="30dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:textSize="17sp"
             android:inputType="number"
