@@ -44,13 +44,17 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
         phoneText.setText("+91 " + no);
         sendVerificationCode(no);
         btn_verify.setOnClickListener(this);
+
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_o_t_p);
+        mAuth = FirebaseAuth.getInstance();
         init();
+
 
         ed1.setOnKeyListener(new View.OnKeyListener() {
 

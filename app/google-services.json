@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "55070122511",
+    "firebase_url": "https://find-ride-app.firebaseio.com",
+    "project_id": "find-ride-app",
+    "storage_bucket": "find-ride-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55070122511:android:0349ef0f5ef7f58abe797a",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55070122511-kanbnkm6i9a9j2rhego1ndms753f7p8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "658615f6d6352f5cd02703aaeead4c026cfb334e"
+          }
+        },
+        {
+          "client_id": "55070122511-sja4gutmkq86j8chp6e8k09pfdk4oi0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjCg5_Ol6fXwnscTArQhPYF4dtBx29FOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55070122511-sja4gutmkq86j8chp6e8k09pfdk4oi0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
