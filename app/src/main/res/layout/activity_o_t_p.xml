@@ -66,7 +66,7 @@
                 android:layout_marginTop="130dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
-                android:layout_toEndOf="@+id/txt3"
+                android:layout_toEndOf="@+id/phoneNumberText"
                 android:fontFamily="@font/open_sans_light"
                 android:text="@string/Edit"
                 android:textAlignment="center"
@@ -114,6 +114,26 @@
 
                 <EditText
                     android:id="@+id/otpET4"
+                    android:layout_width="40dp"
+                    android:layout_height="70dp"
+                    android:inputType="number"
+                    android:clickable="false"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <EditText
+                    android:id="@+id/otpET5"
+                    android:layout_width="40dp"
+                    android:layout_height="70dp"
+                    android:gravity="center"
+                    android:clickable="false"
+
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/otpET6"
                     android:layout_width="40dp"
                     android:layout_height="70dp"
                     android:inputType="number"
