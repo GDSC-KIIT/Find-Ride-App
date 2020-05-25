@@ -24,9 +24,10 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class OTPActivity extends AppCompatActivity implements View.OnClickListener {
+public class OTPActivity extends AppCompatActivity implements View.OnClickListener
+{
 
-    EditText otp,ed1,ed2,ed3,ed4;
+    EditText otp,ed1,ed2,ed3,ed4,ed5,ed6;
     TextView phoneText;
     Button btn_verify;
     String no;
@@ -39,6 +40,8 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
         ed2=findViewById(R.id.otpET2);
         ed3=findViewById(R.id.otpET3);
         ed4=findViewById(R.id.otpET4);
+        ed5=findViewById(R.id.otpET5);
+        ed6=findViewById(R.id.otpET6);
         btn_verify = findViewById(R.id.otp_submit);
         no = getIntent().getStringExtra("mobile");
         phoneText.setText("+91 " + no);
@@ -123,6 +126,41 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
                 // TODO Auto-generated method stub
                 if(keyCode == KeyEvent.KEYCODE_DEL) {
                     ed3.requestFocus();
+                }
+                else if (ed4.getText().length() == 1) {
+                    EditText ed5 = findViewById(R.id.otpET5);
+                    ed5.requestFocus();
+                }
+                return false;
+            }
+        });
+        ed5.setOnKeyListener(new View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                EditText ed5=findViewById(R.id.otpET5);
+                EditText ed4=findViewById(R.id.otpET4);
+                // TODO Auto-generated method stub
+                if(keyCode == KeyEvent.KEYCODE_DEL) {
+                    ed4.requestFocus();
+                }
+                else if (ed5.getText().length() == 1) {
+                    EditText ed6 = findViewById(R.id.otpET6);
+                    ed6.requestFocus();
+                }
+                return false;
+            }
+        });
+
+        ed6.setOnKeyListener(new View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                EditText ed6=findViewById(R.id.otpET6);
+                EditText ed5=findViewById(R.id.otpET5);
+                // TODO Auto-generated method stub
+                if(keyCode == KeyEvent.KEYCODE_DEL) {
+                    ed5.requestFocus();
                 }
                 else if (ed4.getText().length() == 1) {
                     Button button = findViewById(R.id.otp_submit);
