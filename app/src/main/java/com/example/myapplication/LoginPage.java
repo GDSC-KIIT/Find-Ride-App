@@ -41,4 +41,5 @@ public class LoginPage extends Activity implements View.OnClickListener {
             finish();
         }
     }
+
 }

@@ -30,7 +30,7 @@
                 android:fontFamily="@font/nunito_sans"
                 android:text="@string/otp_label"
                 android:textColor="@color/normal_text"
-                android:textSize="@dimen/cast_expanded_controller_margin_between_status_text_and_seek_bar"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <TextView

@@ -175,6 +175,9 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         if(v.getId() == btn_verify.getId()){
             /// TODO KIRTIP CHANGE HERE
+            Intent intent = new Intent(OTPActivity.this, MapsActivity.class);
+            startActivity(intent);
+            finish();
             String code = otp.getText().toString().trim();
             if (code.isEmpty() || code.length() < 6) {
                 otp.setError("Enter valid code");

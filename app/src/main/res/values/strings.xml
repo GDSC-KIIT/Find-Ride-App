@@ -8,8 +8,11 @@
     <string name="otp_label2">Enter the 4-digit code sent to you at</string>
     <string name="Edit">Edit</string>
     <string name="submit">SUBMIT</string>
-
+    <string name="call">CALL</string>
+    <string name="back">BACK</string>
     <string name="continuetext">CONTINUE</string>
     <string name="mobile_num">+91 9617622015</string>
     <string name="tandc"><![CDATA[By continuing, I confirm that I have read & agree to the Terms & conditions and Privacy policy.]]></string>
+    <string name="google_maps_key">AIzaSyBKdn6-MARfW1SnaiYpF7br1t3KkIvRqiE</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
