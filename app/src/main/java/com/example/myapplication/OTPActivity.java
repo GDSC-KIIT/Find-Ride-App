@@ -199,7 +199,7 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
     }
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
             //Getting the code sent by SMS
             String code = phoneAuthCredential.getSmsCode();
             //sometime the code is not detected automatically
