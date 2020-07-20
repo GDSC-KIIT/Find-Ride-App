@@ -41,7 +41,7 @@
             android:name=".SplashActivity"
             android:screenOrientation="fullSensor"></activity>
         <activity
-            android:name=".LoginPage"
+            android:name=".userloginPage"
             android:screenOrientation="fullSensor">
 
         </activity>

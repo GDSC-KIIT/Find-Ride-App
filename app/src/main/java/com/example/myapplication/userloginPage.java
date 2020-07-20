@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginPage extends Activity implements View.OnClickListener {
+public class userloginPage extends Activity implements View.OnClickListener {
     EditText nameEditText,phoneEditText;
     Button loginButton;
     String mobile,name;
@@ -35,7 +35,7 @@ public class LoginPage extends Activity implements View.OnClickListener {
                 Toast.makeText(this, "Please Check the above FIelds", Toast.LENGTH_SHORT).show();
                 return;
             }
-            Intent intent = new Intent(LoginPage.this, OTPActivity.class);
+            Intent intent = new Intent(userloginPage.this, OTPActivity.class);
             intent.putExtra("mobile", mobile);
             startActivity(intent);
             finish();
