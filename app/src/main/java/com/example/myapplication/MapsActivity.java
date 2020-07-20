@@ -48,11 +48,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Button backbutton=findViewById(R.id.backButton);
         Button callButton=findViewById(R.id.callButton);
         TextView textViewDistance=findViewById(R.id.distanceText);
-        //TODO Accept the coordinates here
+        //TODO Accept the coordinates of driver
 
         Bundle b=getIntent().getExtras();
         double cusLat=b.getDouble("lat");
         double cuslong=b.getDouble("long");
+
         double driverlat=22.386905;
         double driverlong=88.419458;
 

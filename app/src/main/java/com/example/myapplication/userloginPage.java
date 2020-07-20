@@ -36,6 +36,7 @@ public class userloginPage extends Activity implements View.OnClickListener {
                 return;
             }
             Intent intent = new Intent(userloginPage.this, OTPActivity.class);
+            intent.putExtra("name",name);
             intent.putExtra("mobile", mobile);
             startActivity(intent);
             finish();

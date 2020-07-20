@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".DriverLoginActivity"></activity>
+        <activity android:name=".DriverRegisterActivity" />
+        <activity android:name=".UpdateLocationActivity" />
+        <activity android:name=".driverloginPage" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -30,28 +33,26 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
-
-
-        </activity>
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".OTPActivity"
-            android:screenOrientation="fullSensor"></activity>
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="fullSensor"></activity>
-        <activity
-            android:name=".userloginPage"
             android:screenOrientation="fullSensor">
-
-        </activity>
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".userloginPage"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".LoginChoice"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

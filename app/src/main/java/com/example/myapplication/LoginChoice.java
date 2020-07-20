@@ -11,10 +11,13 @@ public class LoginChoice extends Activity {
         super.onCreate(icicle);
         setContentView(R.layout.activity_loginchoice);
     }
+    //Directs to the user login page
     public void userloginIntent(View view){
         Intent intent = new Intent(this, userloginPage.class);
         startActivity(intent);
     }
+
+    //directs to the driver login or register page
     public void driverloginIntent(View view){
         Intent intent = new Intent(this, driverloginPage.class);
         startActivity(intent);
