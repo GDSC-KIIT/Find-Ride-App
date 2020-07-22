@@ -13,7 +13,7 @@
     <EditText
         android:id="@+id/et_name"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/iv_user"
@@ -44,7 +44,7 @@
     <EditText
         android:id="@+id/et_mobile"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_name"
@@ -74,7 +74,7 @@
     <EditText
         android:id="@+id/et_password"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_mobile"
@@ -101,7 +101,7 @@
     <EditText
         android:id="@+id/et_chasis_no"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_password"
@@ -127,7 +127,7 @@
     <EditText
         android:id="@+id/et_class_of_vehicle"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_chasis_no"
@@ -152,7 +152,7 @@
     <EditText
         android:id="@+id/et_engine_no"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_class_of_vehicle"
@@ -180,7 +180,7 @@
     <EditText
         android:id="@+id/et_age"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_engine_no"
@@ -208,7 +208,7 @@
     <EditText
         android:id="@+id/et_address"
         android:textColor="#ffffff"
-        android:background="#11000000"
+        android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_age"
