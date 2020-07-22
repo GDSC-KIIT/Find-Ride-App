@@ -4,26 +4,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background_03"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Driver Registration"
+            android:textAlignment="textStart"
+            android:textSize="20dp"
+            android:paddingHorizontal="30dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/open_sans_light"
+            android:textColor="@android:color/background_dark"
+            />
     <EditText
         android:id="@+id/et_name"
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
+        android:hint=" Enter name"
         android:layout_below="@+id/iv_user"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
         android:inputType="textPersonName"
         />
 
-    <TextView
+<!--    <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,19 +45,15 @@
         android:layout_marginTop="22dp"
         android:text="Name:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
-
-
-
-
-
-
+        android:textSize="16sp" />-->
 
     <EditText
         android:id="@+id/et_mobile"
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
+        android:hint="Enter mobile number"
         android:layout_width="260dp"
+        android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:layout_height="30dp"
         android:layout_below="@+id/et_name"
         android:layout_centerHorizontal="true"
@@ -53,7 +61,7 @@
         android:ems="10"
         />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/tv_mobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,19 +71,14 @@
         android:layout_marginTop="22dp"
         android:text="Mobile:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
-
-
-
-
-
-
-
+        android:textSize="16sp" />-->
     <EditText
         android:id="@+id/et_password"
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:hint="Enter password"
         android:layout_height="30dp"
         android:layout_below="@+id/et_mobile"
         android:layout_centerHorizontal="true"
@@ -84,6 +87,7 @@
         android:inputType="textPassword"
         />
 
+<!--
     <TextView
         android:id="@+id/tv_password"
         android:layout_width="wrap_content"
@@ -95,6 +99,7 @@
         android:text="Password:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
+-->
 
 
 
@@ -102,6 +107,8 @@
         android:id="@+id/et_chasis_no"
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:hint="Confirm password"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_password"
@@ -110,7 +117,7 @@
         android:ems="10"
         />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/tv_chasis_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,7 +127,7 @@
         android:layout_marginTop="22dp"
         android:text="Chasis Number:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
+        android:textSize="16sp" />-->
 
 
 
@@ -129,6 +136,8 @@
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
+        android:drawableLeft="@drawable/ic_baseline_directions_car_24"
+        android:hint="Class Of Vehile"
         android:layout_height="30dp"
         android:layout_below="@+id/et_chasis_no"
         android:layout_centerHorizontal="true"
@@ -136,7 +145,7 @@
         android:ems="10"
         />
 
-    <TextView
+  <!--  <TextView
         android:id="@+id/tv_class_of_vehicle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,7 +155,7 @@
         android:layout_marginTop="22dp"
         android:text="Class Of Vehicle:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
+        android:textSize="16sp" />-->
 
 
     <EditText
@@ -154,6 +163,8 @@
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
+        android:drawableLeft="@drawable/ic_baseline_directions_car_24"
+        android:hint="Engine Number"
         android:layout_height="30dp"
         android:layout_below="@+id/et_class_of_vehicle"
         android:layout_centerHorizontal="true"
@@ -161,7 +172,7 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         />
-
+<!--
     <TextView
         android:id="@+id/tv_engine_no"
         android:layout_width="wrap_content"
@@ -172,7 +183,7 @@
         android:layout_marginTop="22dp"
         android:text="Engine Number:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
+        android:textSize="16sp" />-->
 
 
 
@@ -181,6 +192,8 @@
         android:id="@+id/et_age"
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
+        android:hint="Enter age"
+        android:drawableLeft="@drawable/ic_baseline_star_24"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_below="@+id/et_engine_no"
@@ -190,7 +203,7 @@
         android:inputType="textEmailAddress"
         />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/tv_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -200,7 +213,7 @@
         android:layout_marginTop="22dp"
         android:text="Your Age:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
+        android:textSize="16sp" />-->
 
 
 
@@ -210,15 +223,17 @@
         android:textColor="#ffffff"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
+        android:hint="Enter email"
         android:layout_height="30dp"
         android:layout_below="@+id/et_age"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:inputType="textEmailAddress"
         />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -228,7 +243,7 @@
         android:layout_marginTop="22dp"
         android:text="Address:"
         android:textColor="#FFB3B3B3"
-        android:textSize="16sp" />
+        android:textSize="16sp" />-->
 
 
         <ImageView
