@@ -10,13 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_user"
-        android:layout_width="87dp"
-        android:layout_height="67dp"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/icon" />
-
     <EditText
         android:id="@+id/et_name"
         android:textColor="#ffffff"
@@ -38,7 +31,7 @@
         android:layout_alignStart="@+id/et_name"
         android:layout_below="@+id/iv_user"
         android:layout_marginTop="22dp"
-        android:text="Name"
+        android:text="Name:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -68,7 +61,7 @@
         android:layout_alignStart="@+id/et_name"
         android:layout_below="@+id/et_name"
         android:layout_marginTop="22dp"
-        android:text="Mobile"
+        android:text="Mobile:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -99,7 +92,7 @@
         android:layout_alignStart="@+id/et_name"
         android:layout_below="@+id/et_mobile"
         android:layout_marginTop="22dp"
-        android:text="Password"
+        android:text="Password:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -125,7 +118,7 @@
         android:layout_alignStart="@+id/et_password"
         android:layout_below="@+id/et_password"
         android:layout_marginTop="22dp"
-        android:text="Chasis Number"
+        android:text="Chasis Number:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -151,7 +144,7 @@
         android:layout_alignStart="@+id/et_chasis_no"
         android:layout_below="@+id/et_chasis_no"
         android:layout_marginTop="22dp"
-        android:text="Class Of Vehicle"
+        android:text="Class Of Vehicle:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -177,7 +170,7 @@
         android:layout_alignStart="@+id/et_class_of_vehicle"
         android:layout_below="@+id/et_class_of_vehicle"
         android:layout_marginTop="22dp"
-        android:text="Engine Number"
+        android:text="Engine Number:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -205,7 +198,7 @@
         android:layout_alignStart="@+id/et_engine_no"
         android:layout_below="@+id/et_engine_no"
         android:layout_marginTop="22dp"
-        android:text="Your Age"
+        android:text="Your Age:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
 
@@ -233,17 +226,70 @@
         android:layout_alignStart="@+id/et_age"
         android:layout_below="@+id/et_age"
         android:layout_marginTop="22dp"
-        android:text="Address"
+        android:text="Address:"
         android:textColor="#FFB3B3B3"
         android:textSize="16sp" />
-    <Button
+
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/et_address"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:ems="10"
+            android:src="@drawable/upload" />
+
+        <TextView
+            android:id="@+id/tv_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_address"
+            android:layout_alignStart="@+id/et_address"
+            android:layout_below="@+id/et_address"
+            android:layout_marginTop="22dp"
+            android:text="Upload Your Photo:"
+            android:textColor="#FFB3B3B3"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:id="@+id/vehicle"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/photo"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:src="@drawable/upload"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp" />
+
+        <TextView
+            android:id="@+id/tv_vehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/photo"
+            android:layout_alignStart="@+id/photo"
+            android:layout_below="@+id/photo"
+            android:layout_marginTop="22dp"
+            android:text="Upload the Photo of Your Vehicle:"
+            android:textColor="#FFB3B3B3"
+            android:textSize="16sp" />
+
+
+        <Button
         android:id="@+id/btn_register"
         android:background="@drawable/buttonbg1"
         android:textColor="#ffffff"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_below="@+id/et_address"
+        android:layout_below="@+id/vehicle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:onClick="driver_registration"
