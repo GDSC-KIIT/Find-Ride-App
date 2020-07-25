@@ -22,7 +22,7 @@
             />
     <EditText
         android:id="@+id/et_name"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:layout_height="30dp"
@@ -49,7 +49,7 @@
 
     <EditText
         android:id="@+id/et_mobile"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:hint="Enter mobile number"
         android:layout_width="260dp"
@@ -74,7 +74,7 @@
         android:textSize="16sp" />-->
     <EditText
         android:id="@+id/et_password"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
@@ -105,7 +105,7 @@
 
     <EditText
         android:id="@+id/et_chasis_no"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:hint="Confirm password"
@@ -133,7 +133,7 @@
 
     <EditText
         android:id="@+id/et_class_of_vehicle"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:drawableLeft="@drawable/ic_baseline_directions_car_24"
@@ -160,7 +160,7 @@
 
     <EditText
         android:id="@+id/et_engine_no"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
         android:drawableLeft="@drawable/ic_baseline_directions_car_24"
@@ -170,7 +170,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
         />
 <!--
     <TextView
@@ -190,7 +189,7 @@
 
     <EditText
         android:id="@+id/et_age"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:hint="Enter age"
         android:drawableLeft="@drawable/ic_baseline_star_24"
@@ -220,17 +219,16 @@
 
     <EditText
         android:id="@+id/et_address"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
-        android:hint="Enter email"
+        android:hint="Chasis Number"
         android:layout_height="30dp"
         android:layout_below="@+id/et_age"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:drawableLeft="@drawable/ic_baseline_email_24"
-        android:inputType="textEmailAddress"
+        android:drawableLeft="@drawable/ic_baseline_directions_car_24"
         />
 
    <!-- <TextView
