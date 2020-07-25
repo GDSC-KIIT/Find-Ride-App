@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +42,7 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
     private FirebaseAuth mAuth;
     private String mVerificationId;
     FirebaseFirestore firebaseFirestore;
+    boolean pressed;
 
     //init
     private void init(){
@@ -70,117 +73,129 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
         mAuth = FirebaseAuth.getInstance();
         init();
 
+
+
+
+
+        pressed=false;
         //The 6 editText in OTP communicating with each other
-        ed1.setOnKeyListener(new View.OnKeyListener() {
+       ed1.addTextChangedListener(new TextWatcher() {
+           @Override
+           public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+           {
+           }
 
+           @Override
+           public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    if(ed1.getText().toString().trim().length()==1)
+                        ed2.requestFocus();
+           }
+
+           @Override
+           public void afterTextChanged(Editable editable) {
+
+           }
+       });
+
+        ed2.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                EditText ed1=findViewById(R.id.otpET1);
-                // TODO Auto-generated method stub
-                if(keyCode == KeyEvent.KEYCODE_DEL)
-                {
-                    ed1.requestFocus();
-                }
-                else if (ed1.getText().length() == 1)
-                {
-                    EditText ed2 = findViewById(R.id.otpET2);
-                    ed2.requestFocus();
-                }
-                return false;
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
+                
             }
-        });
-
-        ed2.setOnKeyListener(new View.OnKeyListener() {
 
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                EditText ed2=findViewById(R.id.otpET2);
-                EditText ed1 = findViewById(R.id.otpET1);
-                // TODO Auto-generated method stub
-                if(keyCode == KeyEvent.KEYCODE_DEL) {
-                    ed1.requestFocus();
-                }
-                else if (ed2.getText().length() == 1)
-                {
-                    EditText ed3 = findViewById(R.id.otpET3);
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(ed2.getText().toString().trim().length()==1)
                     ed3.requestFocus();
-                }
-                return false;
+                if(ed2.getText().toString().trim().length()==0)
+                    ed1.requestFocus();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
-        ed3.setOnKeyListener(new View.OnKeyListener() {
+        ed3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
+            }
 
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                EditText ed3=findViewById(R.id.otpET3);
-                EditText ed2=findViewById(R.id.otpET2);
-                // TODO Auto-generated method stub
-                if(keyCode == KeyEvent.KEYCODE_DEL)
-                {
-                    ed2.requestFocus();
-                }
-                else if (ed3.getText().length() == 1)
-                {
-                    EditText ed4 = findViewById(R.id.otpET4);
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(ed3.getText().toString().trim().length()==1)
                     ed4.requestFocus();
-                }
-                return false;
+                if(ed3.getText().toString().trim().length()==0)
+                    ed2.requestFocus();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
-        ed4.setOnKeyListener(new View.OnKeyListener() {
+        ed4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                EditText ed4=findViewById(R.id.otpET4);
-                EditText ed3=findViewById(R.id.otpET3);
-                // TODO Auto-generated method stub
-                if(keyCode == KeyEvent.KEYCODE_DEL) {
-                    ed3.requestFocus();
-                }
-                else if (ed4.getText().length() == 1) {
-                    EditText ed5 = findViewById(R.id.otpET5);
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(ed4.getText().toString().trim().length()==1)
                     ed5.requestFocus();
-                }
-                return false;
+                if(ed4.getText().toString().trim().length()==0)
+                    ed3.requestFocus();
             }
-        });
-        ed5.setOnKeyListener(new View.OnKeyListener() {
 
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                EditText ed5=findViewById(R.id.otpET5);
-                EditText ed4=findViewById(R.id.otpET4);
-                // TODO Auto-generated method stub
-                if(keyCode == KeyEvent.KEYCODE_DEL) {
-                    ed4.requestFocus();
-                }
-                else if (ed5.getText().length() == 1) {
-                    EditText ed6 = findViewById(R.id.otpET6);
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        ed5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(ed5.getText().toString().trim().length()==1)
                     ed6.requestFocus();
-                }
-                return false;
+                if(ed5.getText().toString().trim().length()==0)
+                    ed4.requestFocus();
             }
-        });
-
-        ed6.setOnKeyListener(new View.OnKeyListener() {
 
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                EditText ed6=findViewById(R.id.otpET6);
-                EditText ed5=findViewById(R.id.otpET5);
-                // TODO Auto-generated method stub
-                if(keyCode == KeyEvent.KEYCODE_DEL) {
-                    ed5.requestFocus();
-                }
-                else if (ed4.getText().length() == 1) {
-                    Button button = findViewById(R.id.otp_submit);
-                    button.requestFocus();
-                }
-                return false;
+            public void afterTextChanged(Editable editable) {
+
             }
         });
+
+        ed6.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(ed6.getText().toString().trim().length()==1)
+                    btn_verify.requestFocus();
+                if(ed6.getText().toString().trim().length()==0)
+                    ed5.requestFocus();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
     }
 
     //When Clicked on submit
@@ -227,7 +242,7 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    //other methods
+    //other methods8
     private void sendVerificationCode(String no) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 "+91" + no,
