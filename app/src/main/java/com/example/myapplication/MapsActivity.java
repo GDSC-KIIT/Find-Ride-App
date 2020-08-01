@@ -51,11 +51,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //TODO Accept the coordinates of driver
 
         Bundle b=getIntent().getExtras();
-        double cusLat=b.getDouble("lat");
-        double cuslong=b.getDouble("long");
-
-        double driverlat=22.386905;
-        double driverlong=88.419458;
+        double cusLat=b.getDouble("cuslat");
+        double cuslong=b.getDouble("cuslong");
+        double driverlat=b.getDouble("drilat");
+        double driverlong=b.getDouble("drilon");
 
         m1 = new MarkerOptions().position(new LatLng(cusLat,cuslong)).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
         m2 = new MarkerOptions().position(new LatLng(driverlat,driverlong)).title("Driver's Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));

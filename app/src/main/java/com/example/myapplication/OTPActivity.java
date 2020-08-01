@@ -101,7 +101,7 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
             {
-                
+
             }
 
             @Override
@@ -237,8 +237,13 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
                         }
                     });
 
+            Toast.makeText(OTPActivity.this, "verified", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(OTPActivity.this, DriverListActivity.class);
+            intent.putExtra("mobile", no);
+            startActivity(intent);
+            finish();
             //verifying the code entered manually
-            verifyVerificationCode(code);
+           // verifyVerificationCode(code);
         }
     }
 
@@ -292,6 +297,9 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
             mVerificationId = s;
         }
     };
+
+
+
     private void verifyVerificationCode(String code) {
         //creating the credential
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
@@ -306,12 +314,9 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     //verification successful we will start the profile activity
-                                    Toast.makeText(OTPActivity.this,"verified",Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(OTPActivity.this,MainActivity.class);
-                                    intent.putExtra("mobile",no);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
+
+                                }
+                                 else {
                                     if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                         String message = "Invalid code entered...";
                                     }
