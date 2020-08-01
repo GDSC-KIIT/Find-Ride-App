@@ -31,7 +31,7 @@ public class userloginPage extends Activity implements View.OnClickListener {
         if(v.getId() == loginButton.getId()) {
             mobile = phoneEditText.getText().toString().trim();
             name = nameEditText.getText().toString().trim();
-            if (mobile.isEmpty() || mobile.length() < 10 || name.isEmpty() || name.length() < 3) {
+            if (mobile.isEmpty() || mobile.length() != 10 || name.isEmpty() || name.length() < 3) {
                 Toast.makeText(this, "Please Check the above FIelds", Toast.LENGTH_SHORT).show();
                 return;
             }

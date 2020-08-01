@@ -52,16 +52,22 @@ public class DriverLoginActivity extends AppCompatActivity {
                                     String tempPass=documentSnapshot.getString("password");
                                     boolean authenticated=documentSnapshot.getBoolean("authenticated");
 
-                                    if(tempmobile.equalsIgnoreCase(mobile)&&tempPass.equalsIgnoreCase(pass)&&authenticated)
-                                    {
-                                        Intent intent=new Intent(DriverLoginActivity.this,UpdateLocationActivity.class);
-                                        startActivity(intent);
-                                        count=true;
-                                        break;
+                                    if(tempmobile.equalsIgnoreCase(mobile)&&tempPass.equalsIgnoreCase(pass)) {
+                                        if (authenticated) {
+                                            Intent intent = new Intent(DriverLoginActivity.this, UpdateLocationActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                            count = true;
+                                            break;
+                                        } else {
+                                            Toast.makeText(DriverLoginActivity.this, "You are Yet to be Verified by our Team", Toast.LENGTH_SHORT).show();
+                                            count = true;
+                                            break;
+                                        }
                                     }
-                                    else if (tempmobile.equalsIgnoreCase(mobile)&&tempPass.equalsIgnoreCase(pass)&&authenticated==false)
+                                    else if(tempmobile.equalsIgnoreCase(mobile)&&tempPass.equalsIgnoreCase(pass)==false)
                                     {
-                                        Toast.makeText(DriverLoginActivity.this, "You are Yet to be Verified by our Team", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(DriverLoginActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
                                         count=true;
                                         break;
                                     }

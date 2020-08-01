@@ -104,7 +104,7 @@
 
 
     <EditText
-        android:id="@+id/et_chasis_no"
+        android:id="@+id/et_conf_pass"
         android:textColor="#000"
         android:background="@drawable/edittextbg"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
@@ -115,6 +115,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
+        android:inputType="textPassword"
         />
 
     <!--<TextView
@@ -131,7 +132,7 @@
 
 
 
-    <EditText
+    <Spinner
         android:id="@+id/et_class_of_vehicle"
         android:textColor="#000"
         android:background="@drawable/edittextbg"
@@ -139,7 +140,7 @@
         android:drawableLeft="@drawable/ic_baseline_directions_car_24"
         android:hint="Class Of Vehile"
         android:layout_height="30dp"
-        android:layout_below="@+id/et_chasis_no"
+        android:layout_below="@+id/et_conf_pass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:ems="10"
@@ -222,7 +223,7 @@
         android:textColor="#000000"
         android:background="@drawable/edittextbg"
         android:layout_width="260dp"
-        android:hint="Chasis Number"
+        android:hint="Address"
         android:layout_height="30dp"
         android:layout_below="@+id/et_age"
         android:layout_centerHorizontal="true"

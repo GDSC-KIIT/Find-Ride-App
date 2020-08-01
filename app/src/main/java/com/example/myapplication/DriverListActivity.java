@@ -35,20 +35,23 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
 public class DriverListActivity extends AppCompatActivity
 {
+    //Initialization
     FirebaseFirestore firebaseFirestore;
     CollectionReference collectionReference;
     private FusedLocationProviderClient fusedLocationProviderClient;
     public double lat;
     public double lon;
     boolean inside=false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
+        //Initial Work
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driverview);
         firebaseFirestore=FirebaseFirestore.getInstance();
         collectionReference=firebaseFirestore.collection("driver");
-        //TODO : Add name and distance here
+
         //Calling the function to request for the GPS Location permission
         requestPermission();
         fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
@@ -86,15 +89,18 @@ public class DriverListActivity extends AppCompatActivity
         }
 
 
-
+        //Getting the details from firebase
         collectionReference.get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                        //Arraylist to store the DriverList objects to be displayed to customer
                         ArrayList<DriverList> driverLists=new ArrayList<>(20);
 
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots)
                         {
+                            //Getting the name, coordinates and phone number of the Driver
                             String tempName=documentSnapshot.getString("name");
                             String tempLat=documentSnapshot.getString("latitude");
                             String tempLon=documentSnapshot.getString("longitude");
@@ -102,10 +108,12 @@ public class DriverListActivity extends AppCompatActivity
                             double distance=distance(Double.parseDouble(tempLat),lat,Double.parseDouble(tempLon),lon);
                             boolean authenticated=documentSnapshot.getBoolean("authenticated");
 
+                            //Filtering out if the person is authenticated and if he is closer to the customer (3 km radius)
                             if(authenticated&&distance<=3)
                               driverLists.add(new DriverList(tempName,String.format("%.2f", distance)+" km",Double.parseDouble(tempLat),Double.parseDouble(tempLon),phno));
                         }
 
+                        //Sorting the Arraylist according to proximity of the customer
                         for(int i=0;i<driverLists.size();i++)
                         {
                             for(int j=0;j<driverLists.size()-1-i;j++)
@@ -114,6 +122,8 @@ public class DriverListActivity extends AppCompatActivity
                                 Collections.swap(driverLists,j+1,j+0);
                             }
                         }
+
+                        //ListAdapter class called and the details are displayed there
                         RecyclerView recyclerView  = (RecyclerView)findViewById(R.id.rec);
                         ListAdapter adapter = new ListAdapter(driverLists,lat,lon);
                         recyclerView.setHasFixedSize(true);
@@ -141,15 +151,13 @@ public class DriverListActivity extends AppCompatActivity
     public static double distance(double lat1, double lat2, double lon1, double lon2)
     {
 
-        // The math module contains a function
-        // named toRadians which converts from
-        // degrees to radians.
+        // Converting degrees to radians.
         lon1 = Math.toRadians(lon1);
         lon2 = Math.toRadians(lon2);
         lat1 = Math.toRadians(lat1);
         lat2 = Math.toRadians(lat2);
 
-        // Haversine formula
+        // Used Haversine formula
         double dlon = lon2 - lon1;
         double dlat = lat2 - lat1;
         double a = Math.pow(Math.sin(dlat / 2), 2)
@@ -158,8 +166,7 @@ public class DriverListActivity extends AppCompatActivity
 
         double c = 2 * Math.asin(Math.sqrt(a));
 
-        // Radius of earth in kilometers. Use 3956
-        // for miles
+        // Radius of earth in kilometers
         double r = 6371;
 
         // calculate the result
@@ -191,16 +198,9 @@ public class DriverListActivity extends AppCompatActivity
                 });
     }
 
-
     //Method for requesting GPS permission
     private void requestPermission()
     {
         ActivityCompat.requestPermissions(this,new String[]{ACCESS_FINE_LOCATION}, 44);
     }
-
-    public void goToMap()
-    {
-
-    }
-
 }

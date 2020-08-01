@@ -43,13 +43,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Initial work
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         Button backbutton=findViewById(R.id.backButton);
         Button callButton=findViewById(R.id.callButton);
         TextView textViewDistance=findViewById(R.id.distanceText);
-        //TODO Accept the coordinates of driver
 
+        //Accepting the coordinates of driver and customer along with phone number of the customer requested
         Bundle b=getIntent().getExtras();
         double cusLat=b.getDouble("cuslat");
         double cuslong=b.getDouble("cuslong");
@@ -57,6 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         double driverlong=b.getDouble("drilon");
         final String phno=b.getString("phno");
 
+        //Adding Markers
         m1 = new MarkerOptions().position(new LatLng(cusLat,cuslong)).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
         m2 = new MarkerOptions().position(new LatLng(driverlat,driverlong)).title("Driver's Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -65,16 +68,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
 
-        //Distance
-
+        //Distance between the 2 markers
+        //Fetching Location 1
         Location location1=new Location("");
         location1.setLatitude(driverlat);
         location1.setLongitude(driverlong);
 
+        //Fetching Location 2
         Location location2=new Location("");
         location2.setLatitude(cusLat);
         location2.setLongitude(cuslong);
 
+        //Finds the distance between the two location
         double distance=location1.distanceTo(location2)/1000;
         DecimalFormat f = new DecimalFormat("##.00");
         if(Math.floor(distance)!=0)
@@ -83,9 +88,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             textViewDistance.setText("Distance is :-    0"+f.format(distance)+ " Km");
 
 
-        //Work of buttons
-
-
+        //The BACK button
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,29 +98,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        //The CALL Button
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-         //todo get the phone number using intent
                 Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phno));
                 startActivity(intent);
             }
         });
     }
 
-
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     *
-     * @return
-     */
+    //Colour and other image of the marker change
     public BitmapDrawable writeOnDrawable(int drawableId, String text){
 
         Bitmap bm = BitmapFactory.decodeResource(getResources(), drawableId).copy(Bitmap.Config.ARGB_8888, true);
@@ -132,10 +123,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         return new BitmapDrawable(bm);
     }
+
+    //When the map is ready
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        // Add a marker1 in Latitude and Longitude and move the camera
+        // Add a marker1 and marker 2 in the map
         mMap1 = googleMap;
         Log.d("mylog", "Added Markers");
         mMap1.addMarker(m1);
@@ -143,7 +136,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Animating the camera
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
-
         builder.include(m1.getPosition());
         builder.include(m2.getPosition());
 
@@ -158,6 +150,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    //generating the url of the given map
     private String getUrl(LatLng origin, LatLng dest, String directionMode) {
         // Origin of route
         String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
@@ -174,6 +167,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return url;
     }
 
+
+    //Adding polyline
     @Override
     public void onTaskDone(Object... values) {
         if (polyline != null)
