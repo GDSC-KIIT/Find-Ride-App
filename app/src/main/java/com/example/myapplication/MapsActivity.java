@@ -55,6 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         double cuslong=b.getDouble("cuslong");
         double driverlat=b.getDouble("drilat");
         double driverlong=b.getDouble("drilon");
+        final String phno=b.getString("phno");
 
         m1 = new MarkerOptions().position(new LatLng(cusLat,cuslong)).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN));
         m2 = new MarkerOptions().position(new LatLng(driverlat,driverlong)).title("Driver's Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
@@ -88,16 +89,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new FetchURL(MapsActivity.this).execute(getUrl(m1.getPosition(), m2.getPosition(), "driving"), "driving");
-
+                Intent intent=new Intent(MapsActivity.this,DriverListActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//todo get the phone number using intent
-                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse("tel:9748958563"));
+         //todo get the phone number using intent
+                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phno));
                 startActivity(intent);
             }
         });
@@ -178,9 +180,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             polyline.remove();
         polyline = mMap1.addPolyline((PolylineOptions) values[0]);
     }
-
-
-
 }
 
 

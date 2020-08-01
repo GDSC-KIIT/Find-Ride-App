@@ -27,6 +27,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -97,12 +98,22 @@ public class DriverListActivity extends AppCompatActivity
                             String tempName=documentSnapshot.getString("name");
                             String tempLat=documentSnapshot.getString("latitude");
                             String tempLon=documentSnapshot.getString("longitude");
+                            String phno=documentSnapshot.getString("mobile");
                             double distance=distance(Double.parseDouble(tempLat),lat,Double.parseDouble(tempLon),lon);
                             boolean authenticated=documentSnapshot.getBoolean("authenticated");
 
-                              driverLists.add(new DriverList(tempName,distance+" km",Double.parseDouble(tempLat),Double.parseDouble(tempLon)));
+                            if(authenticated&&distance<=3)
+                              driverLists.add(new DriverList(tempName,String.format("%.2f", distance)+" km",Double.parseDouble(tempLat),Double.parseDouble(tempLon),phno));
                         }
 
+                        for(int i=0;i<driverLists.size();i++)
+                        {
+                            for(int j=0;j<driverLists.size()-1-i;j++)
+                            {
+                                if((Double.parseDouble(driverLists.get(j).getDis().substring(0,driverLists.get(j).getDis().indexOf(' ')))) > (Double.parseDouble(driverLists.get(j+1).getDis().substring(0,driverLists.get(j+1).getDis().indexOf(' ')))))
+                                Collections.swap(driverLists,j+1,j+0);
+                            }
+                        }
                         RecyclerView recyclerView  = (RecyclerView)findViewById(R.id.rec);
                         ListAdapter adapter = new ListAdapter(driverLists,lat,lon);
                         recyclerView.setHasFixedSize(true);
@@ -120,6 +131,10 @@ public class DriverListActivity extends AppCompatActivity
 
 
     }
+
+
+
+
 
 
     // Used Haversine formula to calculate the distance between 2 points

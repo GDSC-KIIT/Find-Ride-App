@@ -5,12 +5,18 @@ public class DriverList
     private String name;
     private String dis;
     private double lat,lon;
-    public DriverList(String name,String dis,double lat,double lon)
+    private String phno;
+    public DriverList(String name,String dis,double lat,double lon,String phno)
     {
         this.name=name;
         this.dis=dis;
         this.lat=lat;
         this.lon=lon;
+        this.phno=phno;
+    }
+
+    public String getPhno() {
+        return phno;
     }
 
     public double getLat() {
@@ -33,4 +39,6 @@ public class DriverList
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

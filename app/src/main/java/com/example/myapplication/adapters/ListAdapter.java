@@ -50,6 +50,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final double drilat,drilon;
         drilat=driverLists.get(position).getLat();
         drilon=driverLists.get(position).getLon();
+        final String phno=driverLists.get(position).getPhno();
         y.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +66,7 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 intent.putExtra("cuslong", cuslon);
                 intent.putExtra("drilat",drilat);
                 intent.putExtra("drilon",drilon);
+                intent.putExtra("phno",phno);
                 view.getContext().startActivity(intent); }
         });
     }
